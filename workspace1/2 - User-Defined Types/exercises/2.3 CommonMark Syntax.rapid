@@ -1,0 +1,32 @@
+/** This model is part of the RAPID-ML e-learning program.<br/>
+    Copyright (c) 2017 ModelSolv Inc. All rights reserved. */
+rapidModel CommonMarkDocs
+
+	/** ### Purpose 
+
+    RAPID-ML uses the CommonMark specification for 
+    documentation comments. 
+    
+    ### Instructions
+    
+    The following text has formatting instructions in parentheses. 
+    Translate these formatting instructions into the corresponding 
+    CommonMark syntax, and check your work using the live 
+    Documentation View on the right.
+    
+    > (Heading 1) Introducing RoboPet
+    >  
+    > Have you ever wished your pet would have (italics)robot-like
+    qualities(/italics)? Consider the benefits:
+    >   
+    > (bullet list)
+    >  Solar powered, no feeding, walking , or cleaning up!
+    >  Snuggly as you please, with interchangeable synthetic fur coats.
+    >  Replaces your home smart hub, food processor and hedge trimmer.
+	>  
+    > Visit (link to RoboPet.io)RoboPet's online configurator(/link)
+    > today to build your own custom RoboPet!        
+	*/
+	dataModel RoboPetDataModel
+	
+		structure RoboPet

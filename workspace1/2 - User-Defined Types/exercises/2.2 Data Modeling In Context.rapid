@@ -1,0 +1,34 @@
+/** This model is part of the RAPID-ML e-learning program.<br/>
+    Copyright (c) 2017 ModelSolv Inc. All rights reserved. */
+rapidModel MyDomain
+
+	/** ### Purpose 
+
+	Apply what you've learned to define some data structures
+	and user-defined data typees relevant to your business
+	domain.  
+    
+    ### Instructions
+    
+    Think about the business domain you're supporting, 
+    maybe focusing on one recent project you've worked
+    on. Define some data structures and some user-defined 
+    types that are used in that context. Try to capture
+    concepts that are specific to your domain, and 
+    that provide insight to someone new to the domain. 
+    
+    Surprise your instructor and classmates with something 
+    they didn't know!
+    
+    Aim for: 
+  	* 2 or more substantial data structures 
+  	* 3 or more simple data types, including at least 
+  	  one string or integer enumeration. 
+  	  
+  	Don't forget to rename the `rapidModel`, `dataModel`, 
+  	and `structure` to reflect your business domain and/or
+  	system context.
+	*/
+	dataModel MyDomainDataModel
+	
+		structure Placeholder
