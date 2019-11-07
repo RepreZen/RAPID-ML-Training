@@ -15,9 +15,9 @@ rapidModel Restaurant
   	> A Restaurant has the following propeties:
 	> * A name
 	> * One or more cuisines
-	> * Star Rating (whole number between 1 and 10)
+	> * Star Rating
 	> * Number of Reviews
-	> * Date 
+	> * Date Opened
 	> * Postal code
 	> * Weekday opening time
 	> * Weekday closing time
