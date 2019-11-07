@@ -1,72 +1,52 @@
 /** This model is part of the RAPID-ML e-learning program.<br/>
     Copyright (c) 2017 ModelSolv Inc. All rights reserved. */
-rapidModel Securities
+rapidModel Audio
 
 	/** ### Purpose 
 
-	Exercise data structure inheritance in a business
-	context.
-	
+	We'll apply what we've learned to create some specialized
+	types for measurements and related properties.  
+    
     ### Instructions
     
-    We need to enrich the `Security` data structure to 
-    include more detailed properties, some of which depend 
-    on the asset class.   
-       
-    #### Stock
-    `Stock` is a type of security that has these additional
-    properties:
-    * Market Capitalization
-    * Earnings per Share
-    * Price-to-Earnings Ratio
-    * 52-week high
-    * 52-week low
-    * Dividend Yield
-    * Currency
-    
-    #### Bond
-    `Bond` is a type of security that has these additional
-    properties:
-    * 52-week high
-    * 52-week low
-    * Coupon in %
-    * Yield in %
-    * Duration
-    * Maturity data
-    * Currency
-    ----
-    
-    Update the model to define `Stock` and `Bond` 
-    as subtypes of `Security`. 
-    
-    Define each the above properties in the appropriate
-    data structure. 
-    
-    Add brief documentation strings to each of the 
-    data structures and properties. (These do not 
-    have to be accurate definitions of the financial
-    terms.) 
-    
+    Modify the data model as follows:
+  	* Notice that `gain`, `volume`, `bass`, `mid`, and 
+  	  `treble` all have the same integer data type with the
+  	  same valueRange constraint. Extract the value range to
+  	  an `AudioLevel` simple data type, and change those five
+      properties to use the new simple type. 
+  	* `effectType` must be one of several predefined string 
+  	  values. Create a new `AudioFX` enumeration with the 
+  	  allowed values 'None', 'Hall Reverb', 'Plate Reverb', 
+  	  and 'Delay'. Change `effectType` to use this enum.
+  	* Change the `label` property to use a new data type
+  	  that has a maximum length of 10 characters.
+  	* Change `compressorThreshold` to use a new data type
+  	  that must be greater than zero, and less than or equal
+  	  to 10.
+  	* Change `groupAssignment` to use a new data type with
+  	  a pattern constraint. The regular expression restricts
+  	  the value to a single upper-case letter in the standard
+  	  alphabet.<br/><br/>
+  	  **HINT:** Use a regular expression sandbox like 
+  	  https://www.regextester.com to specify and test
+  	  the regular expression.
 	*/
-	dataModel SecuritiesDataModel
+	dataModel AudioSettings
 
-		structure Security
-			securityID: string
-			symbol: string
-				of length from 3 to 5
-			issuer: string
-			marketPrice: decimal
-			exchange: as reference to Exchange
-			
-		structure Exchange
-			exchangeID: string
-			name: string
-			abbreviation: string
-			assetClass: AssetClassEnum
-			
-		enum string AssetClassEnum
-			"STOCKS"
-			"BONDS"
-			"OPTIONS"
-			"COMMODITIES"
-			
+		structure AudioChannelSettings
+			gain : integer
+				with valueRange from -10 to 10
+			volume : integer	
+				with valueRange from -10 to 10
+			bass : integer	
+				with valueRange from -10 to 10
+			mid : integer	
+				with valueRange from -10 to 10
+			treble : integer	
+				with valueRange from -10 to 10
+			effectType: string
+			label: string
+			compressorThreshold: decimal
+			groupAssignment: string
+			attenuator: integer
