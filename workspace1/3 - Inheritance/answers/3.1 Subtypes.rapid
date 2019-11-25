@@ -1,0 +1,155 @@
+/* This model is part of the RAPID-ML e-learning program.<br/>
+    Copyright (c) 2017-2019 ModelSolv Inc. All rights reserved. */
+rapidModel Securities
+
+	/** ### Purpose 
+
+	Exercise data structure inheritance in a business
+	context.
+	
+    ### Instructions
+    
+    We need to enrich the `Security` data structure to 
+    include more detailed properties, some of which depend 
+    on the asset class.   
+       
+    #### Stock
+    `Stock` is a type of security that has these additional
+    properties:
+    * Market Capitalization
+    * Earnings per Share
+    * Price-to-Earnings Ratio
+    * 52-week high
+    * 52-week low
+    * Dividend Yield
+    * Currency
+    
+    #### Bond
+    `Bond` is a type of security that has these additional
+    properties:
+    * 52-week high
+    * 52-week low
+    * Coupon in %
+    * Yield in %
+    * Time to Maturity
+    * Maturity date
+    * Currency
+    ----
+    
+    Update the model to define `Stock` and `Bond` 
+    as subtypes of `Security`. 
+    
+    Define each the above properties in the appropriate
+    data structure. 
+    
+    Add brief documentation strings to each of the 
+    data structures and properties. (These do not 
+    have to be accurate definitions of the financial
+    terms.) 
+    
+	*/
+	dataModel SecuritiesDataModel
+
+		/** An investment instrument. Specifically, a thing 
+		    deposited or pledged as a guarantee of the fulfillment
+		    of an undertaking or the repayment of a loan, to be 
+		    forfeited in case of default. */
+		structure Security
+			/** A unique identifier for this security. */
+			securityID: string
+			/** Symbol that identifies the security on an 
+			    exchange. */
+			symbol: string
+				of length from 3 to 5
+			/** The legal entity that issues the security. */
+			issuer: string
+			/** Current market price of the security. */
+			marketPrice: decimal
+			/** The exchange on which this security is traded. */ 
+			exchange: as reference to Exchange
+			/** Highest trading price of this security 
+			    within the last 52 weeks. */
+			high52: decimal
+			/** Lowest trading price of this security within
+			    the last 52 weeks. */
+			low52: decimal
+			/** The currency in which the security is traded
+			    on the specified exchange. */
+			currency: string
+
+		/** A type of security that signifies proportionate 
+		    ownership in the issuing corporation. This 
+		    entitles the stockholder to that proportion of 
+		    the corporation's assets and earnings. */
+		structure Stock extends Security
+			/** Market Capitalization: 
+			    The total amount of money currently invested
+			    in the issuing business entity, computed by
+			    multiplying the total number of shares by 
+			    the present share price. */
+			marketCap: decimal
+			/** Earnings per Share:
+			    Total earnings divided by shares outstanding. */
+			EPS: decimal
+			/** Price-to-Earnings Ratio: 
+			    The dollar amount an investor can expect to 
+			    invest in a company in order to receive one 
+			    dollar of that company's earnings. */ 
+			PERatio: decimal
+			/** The annual amount of money a company pays 
+			    shareholders for owning a share of its stock,
+                divided by its current stock price. */
+			dividendYield: decimal
+
+		/** A fixed income instrument that represents a loan 
+		    made by an investor to a borrower (typically 
+		    corporate or governmental). */
+		structure Bond extends Security
+			/** The annual interest payment that the 
+			    bondholder receives from the bond's issue 
+			    date until it matures. */
+			coupon:  decimal
+			/** The return an investor realizes on a bond. 
+			    The current yield is a function of the bond's
+			    price and its coupon or interest payment, 
+			    which will be more accurate than the coupon 
+			    yield if the price of the bond is different 
+			    from its face value. */
+			yield: decimal
+			/** The total lifetime or length of the bond, 
+			    from its issue date to its maturity date. */
+			timeToMaturity: duration
+			/** The date on the issuer must redeem the bond 
+			    by paying the principal or face value. */
+			maturityDate: date
+
+		/** A facility where stockbrokers and traders can buy
+		    and sell securities, such as shares of stock and
+		    bonds and other financial instruments. */
+		structure Exchange
+			/** Unique identifier for this exchange. */
+			exchangeID: string
+			/** Name of the securities exchange. */ 
+			name: string
+			/** Common abbreviation of the exchange. */
+			abbreviation: string
+			/** Asset class that is sold on the exchange. */
+			assetClass: AssetClassEnum
+			
+		/** A type of investable security or asset that may 
+		    be traded on an exchange. */
+		enum string AssetClassEnum
+			/** A type of security that signifies proportionate 
+				ownership in the issuing corporation. */
+			"STOCKS"
+			/** A fixed income instrument that represents a loan 
+				made by an investor to a borrower. */
+			"BONDS"
+			/** A contract which gives the buyer the right, 
+			    but not the obligation, to buy or sell an 
+			    underlying asset or instrument at a specified 
+			    strike price prior to or on a specified date. */
+			"OPTIONS"
+			/** Bulk goods and raw materials that are used to
+				produce consumer products. */
+			"COMMODITIES"

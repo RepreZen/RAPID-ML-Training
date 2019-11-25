@@ -31,8 +31,8 @@ rapidModel Securities
     * 52-week low
     * Coupon in %
     * Yield in %
-    * Duration
-    * Maturity data
+    * Time to Maturity
+    * Maturity date
     * Currency
     ----
     
