@@ -36,19 +36,38 @@ rapidModel Audio
 	*/
 	dataModel AudioSettings
 
+		simpleType AudioLevel defined as integer
+			with valueRange from -10 to 10
+			
+		enum string AudioFX
+			'None'
+			'Hall Reverb'
+			'Plate Reverb'
+			'Delay'
+			
+		simpleType ChannelLabel defined as string
+			of length up to 10
+			
+		simpleType Threshold defined as decimal
+			with valueRange from 0 exclusive up to 10 inclusive
+			
+		simpleType ChannelGroup as string
+			/* Note the raw string syntax: the letter 'r'
+			   followed by a quoted string. Also, note that
+			   the regex does not have ^ (start of string)
+			   and $ (end of string) anchors. These anchors
+			   are implicit in RAPID-ML regular expressions.
+			*/
+			matching regex r"[A-Z]"
+
 		structure AudioChannelSettings
-			gain : integer
-				with valueRange from -10 to 10
-			volume : integer	
-				with valueRange from -10 to 10
-			bass : integer	
-				with valueRange from -10 to 10
-			mid : integer	
-				with valueRange from -10 to 10
-			treble : integer	
-				with valueRange from -10 to 10
-			effectType: string
-			label: string
-			compressorThreshold: decimal
-			groupAssignment: string
+			gain : AudioLevel
+			volume : AudioLevel
+			bass : AudioLevel
+			mid : AudioLevel
+			treble : AudioLevel
+			effectType: AudioFX
+			label: ChannelLabel
+			compressorThreshold: Threshold
+			groupAssignment: ChannelGroup
 			attenuator: integer
