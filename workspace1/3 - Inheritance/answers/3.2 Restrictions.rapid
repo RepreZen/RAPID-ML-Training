@@ -47,6 +47,7 @@ rapidModel Audio
 			EPS: decimal
 			PERatio: decimal
 			dividendYield: decimal
+			restrict exchange: as reference to StockExchange
 
 		/** A fixed income instrument that represents a loan 
 		    made by an investor to a borrower (typically 
@@ -56,6 +57,7 @@ rapidModel Audio
 			yield: decimal
 			timeToMaturity: duration
 			maturityDate: date
+			restrict exchange: as reference to BondExchange
 
 		/** A facility where stockbrokers and traders can buy
 		    and sell securities, such as shares of stock and
@@ -65,6 +67,12 @@ rapidModel Audio
 			name: string
 			abbreviation: string
 		
+		/** A securities exchange for stocks. */
+		structure StockExchange extends Exchange
+		
+		/** A securities exchange for bonds. */
+		structure BondExchange extends Exchange
+
 		/** A type of investable security or asset that may 
 		    be traded on an exchange. */
 		enum string AssetClassEnum
