@@ -3,24 +3,25 @@
 rapidModel Audio
 
 	/** ### Purpose 
-
+	
 	Explore how we can specialize subtypes in RAPID-ML, 
 	so that certain properties have a narrower range
 	of values.
-    
-    ### Instructions
-    
-    Just as stocks and bonds are two different kinds of 
-    securities, stock exchange and bond exchange are two
-    different kinds of exchanges. Stocks trade on a stock
-    exchange, bonds trade on a bond exchange. 
-
-    Modify the data model to define the subtypes of exchange,
-    and restrict the exchange type according to the security
-    subtype.
-
+	
+	### Instructions
+	
+	Just as stocks and bonds are two different kinds of 
+	securities, stock exchange and bond exchange are two
+	different kinds of exchanges. Stocks trade on a stock
+	exchange, bonds trade on a bond exchange. 
+	
+	Modify the data model to define the subtypes of exchange,
+	and restrict the exchange type according to the security
+	subtype.
+	
 	Do you see any other adjustments you might want to make?
 	*/
+	
 	dataModel SecuritiesDataModel
 
 		/** An investment instrument. Specifically, a thing 

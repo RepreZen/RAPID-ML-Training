@@ -3,51 +3,51 @@
 rapidModel Securities
 
 	/** ### Purpose 
-
+	
 	Exercise data structure inheritance in a business
 	context.
 	
-    ### Instructions
-    
-    We need to enrich the `Security` data structure to 
-    include more detailed properties, some of which depend 
-    on the asset class.   
-       
-    #### Stock
-    `Stock` is a type of security that has these additional
-    properties:
-    * Market Capitalization
-    * Earnings per Share
-    * Price-to-Earnings Ratio
-    * 52-week high
-    * 52-week low
-    * Dividend Yield
-    * Currency
-    
-    #### Bond
-    `Bond` is a type of security that has these additional
-    properties:
-    * 52-week high
-    * 52-week low
-    * Coupon in %
-    * Yield in %
-    * Time to Maturity
-    * Maturity date
-    * Currency
-    ----
-    
-    Update the model to define `Stock` and `Bond` 
-    as subtypes of `Security`. 
-    
-    Define each the above properties in the appropriate
-    data structure. 
-    
-    Add brief documentation strings to each of the 
-    data structures and properties. (These do not 
-    have to be accurate definitions of the financial
-    terms.) 
-    
-	*/
+	### Instructions
+	
+	We need to enrich the `Security` data structure to 
+	include more detailed properties, some of which depend 
+	on the asset class.   
+	
+	#### Stock
+	`Stock` is a type of security that has these additional
+	properties:
+	* Market Capitalization
+	* Earnings per Share
+	* Price-to-Earnings Ratio
+	* 52-week high
+	* 52-week low
+	* Dividend Yield
+	* Currency
+	
+	#### Bond
+	`Bond` is a type of security that has these additional
+	properties:
+	* 52-week high
+	* 52-week low
+	* Coupon in %
+	* Yield in %
+	* Time to Maturity
+	* Maturity date
+	* Currency
+	----
+	
+	Update the model to define `Stock` and `Bond` 
+	as subtypes of `Security`. 
+	
+	Define each the above properties in the appropriate
+	data structure. 
+	
+	Add brief documentation strings to each of the 
+	data structures and properties. (These do not 
+	have to be accurate definitions of the financial
+	terms.) 
+	
+	### Answer: */
 	dataModel SecuritiesDataModel
 
 		/** An investment instrument. Specifically, a thing 
