@@ -26,6 +26,9 @@ rapidModel CommonMarkDocs
 	>  
 	> Visit (link to RoboPet.io)RoboPet's online configurator(/link)
 	> today to build your own custom RoboPet!
+
+	### Answer:
+
 	----
 	# Introducing RoboPet
 	
@@ -37,8 +40,7 @@ rapidModel CommonMarkDocs
 	* Replaces your home smart hub, food processor and hedge trimmer.
 	
 	Visit [RoboPet's online configurator](RoboPet.io)
-	today to build your own custom RoboPet!
-	*/
+	today to build your own custom RoboPet! */
 	dataModel RoboPetDataModel
 	
 		structure RoboPet

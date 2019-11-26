@@ -5,14 +5,14 @@ rapidModel Restaurant
 	/** ### Purpose 
 
 	Here, we're translating from a simple, natural language 
-    description into a RAPID-ML data structure. The goal is to get familiar with 
-    primitive data types, and how to use them in data structures. 
-    
-    ### Instructions
-    
-    Create a data structure that matches the following description:
-    
-    > A Restaurant has the following propeties:
+	description into RAPID-ML data model with two data structures. 
+	The goal is to get familiar with reference properties. 
+	
+	### Instructions
+	
+	Create a data structure that matches the following description:
+	
+	> A Restaurant has the following propeties:
 	> * A name
 	> * One or more cuisines
 	> * Star Rating (whole number between 1 and 10)
