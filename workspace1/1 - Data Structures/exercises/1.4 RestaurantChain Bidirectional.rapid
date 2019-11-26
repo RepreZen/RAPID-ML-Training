@@ -4,15 +4,14 @@ rapidModel Restaurant
 
 	/** ### Purpose 
 
-	Here, we're translating from a simple, natural language 
-    description into a RAPID-ML data structure. The goal is to get familiar with 
-    primitive data types, and how to use them in data structures. 
-    
-    ### Instructions
-    
-    Create a data structure that matches the following description:
-    
-    > A Restaurant has the following propeties:
+	This exercise builds on the previous Restaurant Chain data model,
+	and adds a bidirectional association. 
+	
+	### Instructions
+	
+	Create a data structure that matches the following description:
+	
+	> A Restaurant has the following propeties:
 	> * A name
 	> * One or more cuisines
 	> * Star Rating (whole number between 1 and 10)
@@ -26,7 +25,7 @@ rapidModel Restaurant
 	> A Restaurant Chain has:
 	> * A name
 	> * A region
-	> * A set of one or more restaurants. 
+	> * A set of one or more restaurants in the chain. 
 	----
 	Replace the Placeholder structure with data structures
 	that match the model description above. */

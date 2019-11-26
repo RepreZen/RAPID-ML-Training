@@ -4,22 +4,21 @@ rapidModel PhoneConfiguration
 
 	/** ### Purpose 
 
-	Another example, translating from a natural language 
-    description into a RAPID-ML data structure. The goal is to get familiar 
-    with primitive data types and cardinalities. 
-    
-    ### Instructions
-    
-    Create a data structure that matches the following description:
-    
-    > A Phone describes an IP phone, 
-    > containing these parts:
+	This exercise evolves the earlier Phone Configuration data model
+	from a single data structure to a group of related data structures.
+	
+	### Instructions
+	
+	Create a data structure that matches the following description:
+	
+	> A Phone describes an IP phone, 
+	> containing these parts:
 	> * A required serial number (alphanumeric)
 	> * A phone model (alphanumeric)
-    > * A required Phone Configuration
-    > * A required Phone State
-    >
-    > A Phone Configuration describes the programmed setup of the
+	> * A required Phone Configuration
+	> * A required Phone State
+	>
+	> A Phone Configuration describes the programmed setup of the
 	> phone, as set up by a system administrator.  It includes:
 	> * A reference back to the Phone that has this configuration
 	> * One or more assigned SIP numbers
@@ -35,7 +34,7 @@ rapidModel PhoneConfiguration
 	> * Time elapsed on current phone call
 	> * Recent outgoing phone numbers
 	> * Recent incoming phone numbers
-    ----
+	----
 	Replace the Placeholder structure with data structures
 	that match the model description above. */
 	dataModel PhoneConfigDataModel
